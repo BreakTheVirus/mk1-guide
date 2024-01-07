@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <title>MK1: Interactive Strategy Guide</title>
+</head>
+
+<body>
+
+<!-- HEADER / MENU AREA 
+- Consists of the main <header>, flexMenuSelect (Main Menu), and flexCharacterSelect(Character Menu)
+-->
+  <header>
+    <h1>Mortal Kombat: Interactive Strategy Guide</h1>
+  </header>
+  
+  <div class="menuSelect">
+    <div><button onClick="displayMovieGuide()">Move Guide</div>
+    <div><button onClick="displayStory()">Story</button></div>
+    <div><button onClick="displayHiddenCharacters()">Hidden Characters</button></div>
+    <div><button onClick="displayCheatCodes()">Cheat Codes</button></div>
+    <div><button onClick="displaySettings()">Settings</button></div>
+ </div>
+
+ <div class="characterSelect">
+    <div><button onClick="displayJohnnyCage()">Johnny Cage</button></div>
+    <div><button onClick="displayKano()">Kano</button></div>
+    <div><button onClick="displayRaiden()">Raiden</button></div>
+    <div><button onClick="displayLiuKang()">Liu Kang</button></div>
+    <div><button onClick="displayScorpion()">Scorpion</button></div>
+    <div><button onClick="displaySubZero()">Sub-Zero</button></div>
+    <div><button onClick="displaySonyaBlade()">Sonya Blade</button></div>
+  </div>
+
+<!-- contentAreaBG (Background container w/ image), contentArea (main div for content), titleCard (main heading)
+- contentAreaBG was designed to ensure the background image is always appropriately contained
+- contentArea acts as the primary div for site conent
+- titleCard is always visible and updates based on user selection
+-->
+<div class="contentAreaBG">
+  <div class="contentArea" id="contentArea">
+    <h3 id="titleCard">Welcome</h3>
+
+<!-- welcomeMessage (landing page)
+- A welcome message that acts as a landing page
+- Entire div is hidden when a user makes any menu selection
+- Welcome message can be repopulated via the Settings menu
+-->
+      <div id="welcomeMessage">
+        <h3>Memory Lane</h3>
+        <p>Mortal Kombat propelled itself into the spotlight due to the controversial nature of the game.
+           Specifically, the game allowed you to perform a "Fatality," which required the user to Entire
+           a secret button combination to perform violent finishing moves on his/her dazed opponent. Kids 
+           would read through their favorite gaming magazines looking secret moves. Whoever found them first
+           would bring their hand-written notes and let other kids in class copy them.
+        </p>
+        <p>Back then, video games were released in arcades months before they were released on home console.
+           Sometimes you'd be lucky enough to find an empty arcade cabinet, but more often than not there would 
+           already be a few players at the machine. Some of these players played like experts. They knew every 
+           move, secret stage finishers, how to fight hidden characters, and how to easily take down the end 
+           bosses in the game. We would hurry and read the character's ending as fast as we could so we could 
+           tell our friends what happens for each character.
+        </p>
+        <p>Mortal Kombat was more than just a violent video game. It was a game full of hidden secrets and easter
+           eggs. It had interesting characters with back stories as if it was its own comic book universe.
+        </p>
+        <h3>The Strategy Guide</h3>
+        <p>Gaming strategy guides were popular items before the internet became a common household service.
+           These guides touched on everything that made the game interesting. They contained all of the special 
+           moves, finshing moves, biographies, and character endings. They went through the meaning of all of the 
+           hidden messages within the game and even discussed rumors. Friends and I would buy these guides and 
+           read through them looking for anything that we may have missed.
+        </p>
+        <h3>About This Application</h3>
+        <p>When I was a kid, I would often start designing my own strategy guides using colored pens. I loved
+           the idea of digging into the game myself and trying to find my own secret combinations. I would read
+           through the end credits hoping to find a subtle hint that others may have missed. I never did finish a 
+           guide, but better late than never.
+        </p>
+        <p>I am currently studying Front End Web Development and I couldn't think of a better project to marry my 
+           learning efforts with my interests. I've had a blast designing this application. I hope that this offers
+           a sense of nostalgia to those who find it.
+        </p>
+    </div>
+
+<!-- moveArea (Basic Move Guide)
+- A flex box with 2 child divs
+- Shows basic move key and lists all basic move combinations
+-->
+      <div class="moveArea" id="moveGuide">
+          <div>
+            <h3>Move Key</h3>
+              <ul>
+                <li><strong>U</strong>: UP</li>
+                <li><strong>D</strong>: DOWN</li>
+                <li><strong>F</strong>: FORWARD</li>
+                <li><strong>B</strong>: BACK</li>
+                <li><strong>HP</strong>: HIGH PUNCH</li>
+                <li><strong>LP</strong>: LOW PUNCH</li>
+                <li><strong>LK</strong>: LOW KICK</li>
+                <li><strong>HK</strong>: HIGH KICK</li>
+                <li><strong>BL</strong>: BLOCK</li>
+              </ul>
+              <ul>
+                <li><strong>+</strong>: PRESS BUTTONS TOGETHER</li>
+              </ul>
+          </div>
+          <div>
+              <h3>Basic Moves</h3>
+              <ul>
+               <li><strong>FORWARD</strong>: Move Forward</li>
+                <li><strong>BACKWARD</strong>: Move Backward</li>
+                <li><strong>UP</strong>: Jump</li>
+                <li><strong>DOWN</strong>: Duck</li>
+                <li><strong>UP + FORWARD</strong>: Forward Front Tuck</li>
+                <li><strong>UP + BACKWARD</strong>: Backward Back Tuck</li> 
+                <li><strong>HIGH PUNCH</strong></li>
+                <li><strong>LOW PUNCH</strong></li>
+                <li><strong>HIGH KICK</strong></li>
+                <li><strong>LOW KICK</strong></li>
+                <li><strong>DOWN + HIGH PUNCH</strong>: Uppercut</li>
+                <li><strong>DOWN + LOW PUNCH</strong>: Ducking Punch</li>
+                <li><strong>HIGH PUNCH</strong> <em>(Close)</em>: Backfist</li>
+                <li><strong>LOW PUNCH</strong> <em>(Close)</em>: Throw Opponent</li>
+                <li><strong>BACK + HIGH KICK</strong>: Spinning Kick</li>
+                <li><strong>BACK + LOW KICK</strong>: Sweep</li>
+                <li><strong>UP + DIRECTION + KICK</strong>: Flying Kick</li>
+                <li><strong>UP + DIRECTION + PUNCH</strong>: Flying Punch</li>
+                <li><strong>BLOCK</strong>: High Block</li>
+                <li><strong>DOWN + BLOCK</strong>: Low Block</li>     
+              </ul>
+          </div>
+          <div>
+            <h3>The Pit Fatality</h3>
+            <p>At The Pit Stage, perform a <strong>Uppercut</strong> when instructed to finish
+               your opponent to knock them off of the bridge.</p>
+          </div>
+        </div>
+
+<!-- storyArea (Game Story)
+- Displays the storyline of the game
+- A single block div
+-->
+    
+        <div class="storyArea" id="story">
+          <img src="images/shangtsunggoro.png" alt="Image of an elderly wizard who looks
+          both wise and powerful. Behind him is a tall, muscular beast with 4 arms">
+          <p>For ages, it was a competition of honor and glory. Noble warriors from
+            all around the globe were invited tot ake part, each seeking to win the 
+           title of Grand Champion.</p>
+          <p>But that was a long time ago... before the tournament was corrupted by
+            the evil demon Shang Tsung; A warrior who took not only the lives of his 
+            opponents, but their very souls.</p>
+          <p>With the aid of his pupil, Goro (A hideous half-human dragon), Tsung began
+            a domination of the contest which has lasted for centuries. Today, 500 
+            years later, the contest begins anew as warriors once again gather to 
+            partake in Mortal Kombat.</p>
+          <h3>Goro Lives</h3>
+          <img src="images/gorolives.jpg" alt="An image of Goro, who has qualities of both a 
+          dragon and a musular, 4 armed human">
+          <p>A 2,000 year old, half-human dragon, Goro remains undefeated for the past
+            500 years. He won the title of Grand Champion by defeating Kung Lao, A 
+            Shaolin Fighting monk. It was during this period that the tournament fell 
+            into Shang Tsung's hands and was corrupted.</p>
+        </div>
+
+<!-- hiddenCharacters (Hidden Character Area)
+- Uses the same class as story-area as no special styles are  needed
+- Contains information regarding Reptile, a hidden character in the game
+-->
+        <div class="storyArea" id="hiddenCharacters">
+          <h3>Reptile</h3>
+          <img src="images/reptile.png" alt="Image showing a ninja wearing a green and black outfit">
+          <h3>Finding Reptile</h3>
+          <p>Reptile can be found at The Pit stage. After meeting the conditions
+            listed below, players will fight Reptile at the bottom of The Pit.</p>
+          <ul>
+            <li>You must be fighting at <strong>The Pit</strong> stage</li>
+            <li>A <strong>sihlouette</strong> must glide <strong>past the moon</strong></li>
+            <li>You must achieve a <strong>Double Flawless Victory</strong></li>
+            <li>You <strong>must not use block</strong></li>
+            <li>You must <strong>perform a Fatality</strong><em>(Pit Stage Fatality does not count)</em></li>
+          </ul>
+        </div>
+
+<!-- cheatCodeArea (Cheat Code Area)
+- Uses its own class due to some special styling
+- Each child div represents a specific gaming system
+-->
+        <div class="cheatCodeArea" id="cheatCodes">
+          <div>
+            <h3>Sega Genesis</h3>
+            <img src="images/segagenesis.png" alt="Image of the classic gaming system, the Sega 
+            Genesis" style="max-width: 200px;">
+            <h4>Blood Code</h4>
+            <p>At the <strong>Code of Honor</strong> screen:<br>A, B, A, C, A, B, B</p>
+            <h4>Cheat Menu</h4>
+            <p>At the <strong>Start</strong> screen:<br>Down, Up, Left, Left, A, Right, Down</p>
+          </div>
+          <div>
+            <h3>Sega Game Gear</h3>
+            <img src="images/segagamegear.png" alt="Image of the classic hand held gaming system 
+            by Sega, the Game Gear" style="max-width: 100px;">
+            <h4>Blood Code</h4>
+            <p>At the <strong>Code of Honor</strong> screen:<br>2, 1, 2, Down, Up</p>
+          </div>
+        </div>
+
+<!-- settingsArea (Settings Area)
+- Contains settings for the application
+- Sound settings which allow users to toggle sound and music on / off
+- Another sound setting to toggle music loop on / off
+- An option to repopulate the Welcome Screen
+--> 
+        <div class="settingsArea" id="settings">
+          <p>Toggle Sound: 
+            <button onclick="soundOn()" id="soundOn" class="toggleButton" disabled>On</button>
+            <button onclick="soundOff()" id="soundOff" class="toggleButton">Off</button>
+          </p>
+          <p>Toggle Music: 
+            <button onclick="playMusic()" id="playMusic" class="toggleButton">Play</button>
+            <button onclick="pauseMusic()" id="pauseMusic" class="toggleButton" disabled>Pause</button>
+            <button onclick="stopMusic()" id="stopMusic" class="toggleButton" disabled>Stop</button>
+          </p>
+          <p>Loop Music:
+            <button onClick="loopMusicOn()" id="loopOn" class="toggleButton">On</button>
+            <button onClick="loopMusicOff()" id="loopOff" class="toggleButton" disabled>Off</button>
+          </p>
+          <p>Show Welcome Message:
+            <button onClick="showWelcome()" class="toggleButton">Display</button>
+          </p>
+        </div>
+
+<!-- characterSection
+- A flex box container with 2 divs (one for bio, one for special moves)
+- Functionality to display either the character bio or ending
+-->
+        <div class="characterSection" id="characterSection">
+          <div style="flex-grow: 1">
+            <img src="" class="characterPortrait" id="characterPortrait">
+            <p id="characterBiography">Biography</p>
+            <p id="characterEnding">Character Ending</p>
+            <button onClick="showBio()" class="toggleButton" id="showBio" disabled>Show Story</button>
+            <button onClick="showEnding()" class="toggleButton" id="showEnding">Show Ending</button>
+          </div>
+          <div style="flex-grow: 2">
+            <h3>Special Moves</h3>
+            <div id="characterMoves"></div>
+            <h3>Fatality</h3>
+            <div id="characterFinisher"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- AUDIO FILES -->
+
+  <audio id="audioExcellent">
+    <source src="audio/excellent.mp3">
+  </audio>
+
+  <audio id="audioSelect">
+    <source src="audio/select.mp3">
+  </audio>
+
+  <audio id = "audioCage">
+    <source src="audio/johnnycage.mp3">
+  </audio>
+
+  <audio id = "audioKano">
+    <source src="audio/kano.mp3">
+  </audio>
+
+  <audio id = "audioRaiden">
+    <source src="audio/Raiden.mp3">
+  </audio>
+
+  <audio id = "audioKang">
+    <source src="audio/liukang.mp3">
+  </audio>
+
+  <audio id = "audioScorpion">
+    <source src="audio/scorpion.mp3">
+  </audio>
+
+  <audio id = "audioSubZero">
+    <source src="audio/subzero.mp3">
+  </audio>
+
+  <audio id = "audioBlade">
+    <source src="audio/sonyablade.mp3">
+  </audio>
+
+  <audio id = "audioMusic">
+    <source src="audio/music.mp3">
+  </audio>
+
+<!-- Scripts -->
+
+  <script src="scripts.js"></script>
+
+  </body>
+</html>

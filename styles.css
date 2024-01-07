@@ -1,0 +1,371 @@
+/**** Basic Components ****/
+/*
+- html, body, header
+- strong, em
+- .toggleButton 
+*/
+html {
+  background-color: #FFF;
+  height: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(red, orange);
+}
+
+body {
+  background-color: #000;
+  width: 96%;
+  border: 2px solid red;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  height:97%;
+  overflow: auto;
+}
+
+header {
+  height: 10%;
+  color: white;
+  text-align: center;
+}
+
+strong {
+  color: orange;
+}
+
+em {
+  color: yellow;
+}
+
+.toggleButton {
+  background-image: linear-gradient(orange, red);
+  font-weight: bold;
+}
+
+/* BODY SCROLL BAR */
+/* This sets the width of the scroll bar to 0px.
+   If overflow is set to hidden, it causes a bug where some elements
+   are not visible upon resizing the screen
+*/
+body::-webkit-scrollbar, #welcomeMessage::-webkit-scrollbar, 
+.moveArea::-webkit-scrollbar, .storyArea::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-track {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 0px;
+}
+
+/**** menuSelect (Main Menu) ****/
+.menuSelect {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.menuSelect > div {
+  width: 20%;
+}
+
+.menuSelect > div > button {
+  width: 100%;
+  background-image: linear-gradient(red, black);
+  color: white;
+  font-weight: bold;
+}
+
+.menuSelect > div > button:hover {
+    background-image: linear-gradient(black, red);
+  }
+
+/**** characterSelect (Character Menu) ****/
+.characterSelect {
+  display: flex;
+  color: white;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.characterSelect > div {
+  text-align: center;
+  width: 15%;
+}
+
+.characterSelect > div > button {
+  width: 100%;
+  background-image: linear-gradient(red, yellow);
+  font-weight: bold;
+}
+
+.characterSelect > div > button:hover {
+  background-image: linear-gradient(yellow, red);
+}
+
+/**** Content Area *****/
+.contentAreaBG {
+  background-image: url("images/stage-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: white;
+  border-radius: 0px 0px 15px 15px;
+  overflow: hidden;
+}
+
+.contentArea {
+  width: 96%;
+  color: white;
+  padding: 2%;
+  height: 100%;
+  overflow: visible;
+}
+
+.contentArea > h3 {
+  background-color: black;
+  text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 3px;
+}
+
+/**** welcomeMessage (Welcome Message) ****/
+
+#welcomeMessage {
+  border: 2px solid red;
+  border-radius: 15px;
+  background-color: black;
+  padding: 2%;
+  text-align: center;
+  display: block;
+  height: 55%;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+#welcomeMessage > h3 {
+  color: red;
+}
+
+/**** moveArea (Move Guide) ****/
+
+.moveArea {
+  display: none;
+  width: 96%;
+  margin: 0px auto 10px auto;
+  max-height: 70%;
+  overflow: auto;;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.moveArea > div {
+  border: 2px solid red;
+  border-radius: 15px;
+  background-color: black;
+  width: 40%;
+  margin: 0px auto 10px auto;
+  overflow: auto;
+  align-self: flex-start;
+  padding: 10px;
+}
+
+.moveArea > div > ul > li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.moveArea > div > h3 {
+  color: red;
+  text-align: center;
+}
+
+/**** storyArea (Story Area)
+ * hiddenCharacterArea (Hidden Character Area)
+ * settingsArea (Settings Area)
+****/
+.storyArea, .hiddenCharacterArea, .settingsArea {
+  display: none;
+  border: 2px solid red;
+  border-radius: 15px;
+  background-color: black;
+  padding: 2%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  height: 55%;
+  margin-bottom: 10px;
+}
+
+.storyArea > h3 {
+  color: red;
+  text-align: center;
+}
+
+.storyArea > img {
+  max-width: 250px;
+  border: 2px solid red;
+  border-radius: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**** cheatCodeArea (Cheat Code Area) ****/
+.cheatCodeArea {
+  display: none;
+  align-items: stretch;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  overflow: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.cheatCodeArea > div {
+  border: 2px solid red;
+  border-radius: 15px;
+  width: 42%;
+  margin: 0px auto 10px auto;
+  background-color: black;
+  padding: 2%;
+  overflow: auto;
+  align-self: flex-start;
+}
+
+.cheatCodeArea > div > h3, h4 {
+  color: red;
+  text-align: center;
+}
+
+.cheatCodeArea > div > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**** Character Area 
+* charaterPortrait - Bio photo
+* characterSection - Parent Div
+* characterEnding - Character Ending (hidden)
+****/
+.characterPortrait {
+  border: 2px solid red;
+  margin: 3%;
+  border-radius: 15px;
+  width: 125px;
+  height: 200px;
+}
+
+/**** Character Moves (Bio, Ending, Portrait, and Moves ****/
+.characterSection {
+  display: none;
+  width: 90%;
+  text-align: center;
+  margin: 0px auto 10px auto;
+  color: white;
+  height: 65%;
+  overflow-y: auto;
+  flex-wrap: wrap;
+}
+
+.characterSection > div {
+  width: 30%;
+  margin: 1% 2% 10px 2%;
+  border: 2px solid red;
+  background-color: black;
+  border-radius: 15px;
+  padding-bottom: 10px;
+  align-self: flex-start;
+  height: auto;
+}
+
+.characterSection > div > h3 {
+  color: red;
+}
+
+.characterSection > div > p > em {
+  color: yellow;
+}
+
+#characterEnding {
+  display: none;
+}
+
+/**** Media Queries for Mobile ****/
+@media (max-width: 600px) {
+  header {
+    font-size: 75%;
+    height: auto;
+  }
+}
+
+@media (max-width: 800px) {
+/* PRIMARY ELEMENTS */
+  html {
+    height: 100%;
+  }
+  body {
+    height: 96%;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+/* MENU */
+  .menuSelect {
+    flex-direction: column;
+    width: 100%;
+  }
+  .menuSelect > div {
+    width: 100%;
+  }
+  .characterSelect {
+    flex-direction: column;
+    width: 100%;
+  }
+  .characterSelect > div {
+    width: 100%;
+  }
+/* MAIN CONTENT AREA */
+  .contentAreaBG {
+    height: auto;
+    width: 100%;
+  }
+  .contentArea {
+    height: 100%;
+  }
+/* WELCOME MESSAGE / LANDING PAGE */
+  #welcomeMessage {
+    overflow-y: hidden;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+/* CHEAT CODE AREA */
+  .cheatCodeArea {
+    flex-direction: column;
+    width: auto;
+  }
+/* CHARACTER AREA / MOVE AREA */
+  .characterSection, .moveArea {
+    flex-direction: column;
+    width: 90%;
+    margin: 0px auto 10px auto;
+  }
+  .characterSection > div, .moveArea > div {
+    width: 90%;
+    border-radius: 15%;
+  }
+  .moveArea > div {
+    margin-bottom: 20px;
+  }
+}
