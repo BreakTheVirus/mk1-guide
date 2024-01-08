@@ -206,7 +206,7 @@ function displayRaiden() {
   "straw hat. He has glowing blue eyes and lightning strikes in the background";
   document.getElementById("characterBiography").innerHTML = "The name Raiden is actually " +
   "that of mystical warrior who lives among the thunder clouds. It is rumored he received " +
-  "a personal invitation from Shang Tsung himself and took the form of a human toc compete " +
+  "a personal invitation from Shang Tsung himself and took the form of a human to compete " +
   "in the tournament.";
   document.getElementById("characterEnding").innerHTML = "Raiden's victory comes as no " +
   "surprise to him. He was never impressed by Shang Tsung's sorcery, Goro's brute force " +
@@ -270,7 +270,7 @@ function displayScorpion() {
   "dressed in yellow and black.";
   document.getElementById("characterBiography").innerHTML = "Like Sub-Zero, Scropion's " +
   "true name and origin are not known. He has shown from time to time distrust and " +
-  "hatred towards Sub-Zero. Between ninjas, this is usually a sing of opposing clans.";
+  "hatred towards Sub-Zero. Between ninjas, this is usually a sign of opposing clans.";
   document.getElementById("characterEnding").innerHTML = "Marked for death years ago by " +
   "the Lin Kuei, Scorpion was murdered by Sub-Zero. He left behind a wife and child in " +
   "his former life but was allowed to return and avenge his death. <br><br> Even with " +
